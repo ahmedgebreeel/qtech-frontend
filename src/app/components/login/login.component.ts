@@ -28,7 +28,10 @@ export class LoginComponent {
       Validators.required,
       Validators.minLength(6),
     ]),
+    rememberMe : new FormControl(false)
+    
   });
+
 
   onSubmit() {
     if (this.loginForm.invalid) {
@@ -40,8 +43,15 @@ export class LoginComponent {
     this.authService.login(this.loginForm.value).subscribe({
       next: (res) => {
         console.log(res);
-        localStorage.setItem('token', res.token);
-        sessionStorage.setItem('userID', res.user.id);
+        
+        if (this.loginForm.value.rememberMe){
+
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('userID', res.user.id);
+        }else{
+          sessionStorage.setItem('token', res.token);
+          sessionStorage.setItem('userID', res.user.id);
+        }
         this.router.navigateByUrl('/edit/personal');
 
       },
