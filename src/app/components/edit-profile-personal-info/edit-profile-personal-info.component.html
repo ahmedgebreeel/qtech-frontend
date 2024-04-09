@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="side-bar">
+        <button routerLink="/edit/personal" routerLinkActive="active">Personal Information</button>
+        <button routerLink="/edit/social" routerLinkActive="active">Social Media</button>
+    </div>    
+    <form [formGroup]="personalForm" (submit)="save()">
+        <div class="content">
+
+            <div>
+                <h2>Personal Image</h2>
+                <img class="personal-image" src="assets/profile.jpg"  alt="Personal Image">
+            </div>
+    
+            <div class="form-container" >
+                <h3>Personal Information</h3>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="name">First Name:</label>
+                        <input type="text" id="name" formControlName = "firstName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Last Name:</label>
+                        <input type="email" id="email" formControlName = "lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="field1">Full Name In Engilsh :</label>
+                        <input type="text" id="field1" formControlName = "fullNameEnglish">
+                    </div>
+                    <div class="form-group">
+                        <label for="field2">Full Name In Arabic:</label>
+                        <input type="text" id="field2" formControlName = "fullNameArabic">
+                    </div>
+                    <div class="form-group">
+                        <label for="field3">Data Of Birth :</label>
+                        <input type="date" id="field3" formControlName = "dateOfBirth">
+                    </div>
+                    <div class="form-group">
+                        <label for="field4">Nationality:</label>
+                        <input type="text" id="field4" formControlName = "nationality">
+                    </div>
+                   
+                    <div class="form-group">
+                        <label class="gender-label">Gender:</label>
+                        <div style="display: flex;">
+                            <input type="radio" id="male" value="male" formControlName ="gender">
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" value="female" formControlName ="gender">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+    
+            
+            <div class="form-container">
+                    <h2>Address Information</h2>
+                    <div class="form-group">
+                        <label for="name">Country:</label>
+                        <input type="text" id="name" formControlName="country">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">City:</label>
+                        <input type="email" id="email" formControlName="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="field1">Full Address:</label>
+                        <input style="width: 95%;" type="text" id="field1" formControlName="fullAddress">
+                    </div>
+                   
+            </div>
+             
+            
+            
+               
+            <button type="submit"  class="save-button">Save</button>
+            
+         
+        </div>
+    </form>
+    
+</div>

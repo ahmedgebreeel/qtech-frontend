@@ -1,0 +1,33 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
+        @if(loginForm.controls.email.errors && loginForm.controls.email.touched){
+          <div class="error-message"> 
+            @if(loginForm.controls.email.errors['required']){
+
+              <div >Email is required</div>
+            }
+            @if(loginForm.controls.email.errors['email']){
+              
+              <div >Invalid email</div>
+            }
+          </div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Enter password">
+        <div *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched" class="error-message">
+          <div *ngIf="loginForm.controls.password.errors['required']">Password is required</div>
+          <div *ngIf="loginForm.controls.password.errors['minlength']">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid"  class="btn btn-primary">Submit</button>
+    </form>
+       
+  <button class="btn btn-secondary mt-3" (click)="redirectToRegister()">Not registered? Register here</button>
+  </div>
+  

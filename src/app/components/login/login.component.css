@@ -1,0 +1,70 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .login-container {
+    width: 450px; /* Increased width */
+    margin: auto;
+    margin-top: 25vh; /* Center horizontally */
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Increased shadow */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  .btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem; /* Equivalent to mt-3 */
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  
