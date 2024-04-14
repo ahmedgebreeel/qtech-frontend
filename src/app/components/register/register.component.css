@@ -58,4 +58,27 @@
   .btn-secondary:hover {
     background-color: #5a6268;
   }
-  
+   /* Style for the social sign-up buttons container */
+.social-signup-buttons {
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+
+  display: flex; 
+}
+
+/* Style for both Google and Facebook sign-up buttons */
+.social-signup-buttons button {
+  background-color: #3B5998; /* Facebook blue (You can change it to any desired color) */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  /* font-size: 16px; */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust spacing between buttons */
+}
+
+/* Hover effect for both buttons */
+.social-signup-buttons button:hover {
+  opacity: 0.8; /* Decrease opacity on hover */
+}

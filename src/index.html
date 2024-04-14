@@ -6,8 +6,38 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://accounts.google.com/gsi/client" async></script>
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    function callback(res){
+      console.log(res);
+      // Send the response to localhost/register using Fetch API
+      fetch('http://localhost:3000/api/auth/register/google', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ response: res }) // Assuming 'res' is the data you want to send
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle server response if needed
+            // console.log('Server response:', data);
+            sessionStorage.setItem('token', data.token);
+            window.location.href = 'http://localhost:4200/edit/personal';
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error sending data to server:', error);
+        });
+    }
+  </script>
 </body>
 </html>
